@@ -1,0 +1,4 @@
+* Cài đặt các thư viện sau để phục vụ cho dự án:
+npm install express multer cloudinary cors datauri dotenv
+- Cài thêm nodemon cho môi trường dev 
+npm install --save-dev nodemon
