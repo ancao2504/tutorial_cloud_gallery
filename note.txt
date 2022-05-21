@@ -2,3 +2,6 @@
 npm install express multer cloudinary cors datauri dotenv
 - Cài thêm nodemon cho môi trường dev 
 npm install --save-dev nodemon
+
+416834155413795 api key
+aM45zvMBfTeCQS45BpikcDwVEgU api secret
