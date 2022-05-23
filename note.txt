@@ -5,3 +5,4 @@ npm install --save-dev nodemon
 
 416834155413795 api key
 aM45zvMBfTeCQS45BpikcDwVEgU api secret
+CLOUDINARY_URL=cloudinary://416834155413795:aM45zvMBfTeCQS45BpikcDwVEgU@cloudinaryandevct96
