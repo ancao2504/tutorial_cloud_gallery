@@ -75,21 +75,24 @@ app.get("/api/photos", async (req, res) => {
 
 app.post("/api/upload", singleUploadCtrl, async (req, res) => {
   const uploadFile = req.body.file || req.file;
+  let uploadResult;
   try {
     if (!uploadFile) {
       return res.status(422).send({
         message: "There is error when uploading",
       });
     }
-    let uploadResult;
+    
     if (!uploadFile.buffer) {
       uploadResult = await cloudinaryUpload(uploadFile);
     } else {
       const file64 = formatBuffer(req.file);
       uploadResult = await cloudinaryUpload(file64.content);
+      
     }
-    //Convert stream to base64 format
     console.log(uploadResult)
+    //Convert stream to base64 format
+    
     return res.status(200).json({
       message: "Upload OK!",
     });

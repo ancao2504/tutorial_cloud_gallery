@@ -1,6 +1,7 @@
 //Cloudinary SDK
 require("dotenv").config();
 const cloudinary = require("cloudinary").v2;
+const streamifier = require('streamifier');
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
@@ -10,7 +11,7 @@ cloudinary.config({
 
 cloudinaryUpload = (file) => {
     cloudinary.uploader.upload(file, {
-        upload_preset: process.env.UPLOAD_PRESET,
+      upload_preset: process.env.UPLOAD_PRESET,
     });
 }
  
