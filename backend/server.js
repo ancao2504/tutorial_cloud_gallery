@@ -74,6 +74,7 @@ app.get("/api/photos", async (req, res) => {
 //Upload API
 
 app.post("/api/upload", singleUploadCtrl, async (req, res) => {
+
   const uploadFile = req.body.file || req.file;
   let uploadResult;
   try {
@@ -88,13 +89,14 @@ app.post("/api/upload", singleUploadCtrl, async (req, res) => {
     } else {
       const file64 = formatBuffer(req.file);
       uploadResult = await cloudinaryUpload(file64.content);
-      
     }
-    console.log(uploadResult)
+
     //Convert stream to base64 format
-    
     return res.status(200).json({
+      url: uploadResult.secure_url,
+      data : uploadResult,
       message: "Upload OK!",
+      
     });
   } catch (error) {
     return res.status(422).send({

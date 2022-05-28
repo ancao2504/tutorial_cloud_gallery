@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "axios": "^0.27.2",
     "cloudinary": "^1.30.0",
     "cors": "^2.8.5",
     "datauri": "^4.1.0",

@@ -9,10 +9,14 @@ cloudinary.config({
   api_secret: process.env.API_SECRET,
 });
 
-cloudinaryUpload = (file) => {
-    cloudinary.uploader.upload(file, {
+cloudinaryUpload = async (file) => {
+    // cloudinary.uploader.upload(file, {
+    //   upload_preset: process.env.UPLOAD_PRESET,
+    // });
+    const uploadRersponse = await cloudinary.uploader.upload(file, {
       upload_preset: process.env.UPLOAD_PRESET,
     });
+    return uploadRersponse
 }
  
 
